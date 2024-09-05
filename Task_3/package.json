@@ -1,0 +1,24 @@
+{
+  "name": "task_3",
+  "version": "1.0.0",
+  "description": "A Test Project for CRUD",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "Test",
+    "CRUD"
+  ],
+  "author": "Arpandev Bhattacharya",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "mysql2": "^3.11.0",
+    "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
