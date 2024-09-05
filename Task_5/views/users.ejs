@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Users</h1>
+    <ul>
+        <% users.forEach(user => { %>
+            <li>
+                <%= user.name %> - <%= user.email %>
+                <a href="/users/edit/<%= user.id %>" class="btn">Edit</a>
+                <form action="/users/delete/<%= user.id %>" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+
+    <h2>Add User</h2>
+    <form action="/users" method="POST">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
