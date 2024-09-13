@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Employee Data</title>
+</head>
+<body>
+    <div class="form-container">
+        <form action="/employee/edit/:id" method="POST">
+            <lable>Employee Name</lable>
+            <input type="text" name="empName" value="<%= employee.empName %>">
+            <lable>Employee Email</lable>
+            <input type="text" name="empEmail" value="<%= employee.empEmail %>">
+            <lable>Employee Phone</lable>
+            <input type="number" name="empPhone" value="<%= employee.empPhone %>">
+            <select name="position" id="" disabled="disabled">
+                <option value="<%= employee.position %>"><%= employee.position %></option>
+            </select>
+            <lable>Salary</lable>
+            <input type="number" name="salary" value="<%= employee.salary %>"> <br>
+            
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</body>
+</html>

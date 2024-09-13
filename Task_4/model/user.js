@@ -12,6 +12,7 @@ const User= sequelize.define('User',
             allowNull:false,
             unique:true
         },
+        
         address:{
             type:DataTypes.STRING(100),
             allowNull:false

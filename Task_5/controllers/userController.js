@@ -1,5 +1,5 @@
 const User = require('../models/user');
-const Brand = require('../models/brand');
+const Admin= require('../models/admin')
 
 exports.getUsers = async (req, res) => {
     try {

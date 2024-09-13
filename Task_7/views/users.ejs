@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Users List</h1>
+
+        <table class="table table-borderless table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach((user, index) => { %>
+                    <tr>
+                        <th scope="row"><%= index + 1 %></th>
+                        <td><%= user.name %></td>
+                        <td><%= user.email %></td>
+                        <td><%= user.brand ? user.brand.title : 'No Brand' %></td>
+                        <td>
+                            <a href="/users/edit/<%= user.id %>" class="btn btn-primary btn-sm">Edit</a>
+                            <form action="/users/delete/<%= user.id %>" method="POST" style="display:inline;">
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+
+        <h2 class="mt-5">Add User</h2>
+        <form action="/users" method="POST">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="password" placeholder="Password" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <!-- <label for="brandId">Brand</label> -->
+                <select name="brandId" class="form-control" id="brandId" required>
+                    <option value="" disabled selected>Select a Brand</option>
+                    <% brands.forEach(brand => { %>
+                        <option value="<%= brand.id %>"><%= brand.title %></option>
+                    <% }) %>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success">Add User</button>
+        </form>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

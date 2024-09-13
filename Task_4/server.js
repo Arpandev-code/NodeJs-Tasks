@@ -1,6 +1,7 @@
 const express = require('express');
 const sequelize = require('./config/database');
 const userRoutes = require('./routes/userRoutes');
+const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 
@@ -11,9 +12,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('login');
 });
-app.use('/', userRoutes);
+
+app.use(userRoutes);
+
+app.use('/', authRoutes);
 
 sequelize.sync()
     .then(() => {

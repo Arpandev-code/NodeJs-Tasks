@@ -3,6 +3,7 @@ const sequelize = require('./config/database');
 const session = require('express-session');
 const userRoutes = require('./routes/userRoutes');
 const authRoutes = require('./routes/authRoutes');
+const admin=require('./models/admin');
 
 const app = express();
 

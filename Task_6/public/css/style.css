@@ -1,0 +1,115 @@
+/* Reset default margin, padding and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container styling */
+.container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+}
+
+/* Table styling */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+.user-table th,
+.user-table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.user-table th {
+    background-color: #4CAF50;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 3px solid #ddd;
+}
+
+.user-table td {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Zebra stripes for table rows */
+.user-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover effect for table rows */
+.user-table tr:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.02);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Action buttons */
+.user-table a,
+.user-table button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.user-table a {
+    background-color: #007bff;
+}
+
+.user-table a:hover {
+    background-color: #0056b3;
+}
+
+.user-table button {
+    background-color: #ff6b6b;
+}
+
+.user-table button:hover {
+    background-color: #e55353;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .user-table {
+        font-size: 14px;
+    }
+
+    .user-table th, .user-table td {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <link rel="stylesheet" href="/css/employee.css">
+</head>
+<body>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Email Address</th>
+                    <th>Phone Number</th>
+                    <th>Position</th>
+                    <th>Task Assigened</th>
+                    <th>Task Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% employees.forEach((employee,index )=> { %>
+                    <tr>
+                        <td><%= index+1 %></td>
+                        <td><%= employee.empName %></td>
+                        <td><%= employee.empEmail %></td>
+                        <td><%= employee.empPhone %></td>
+                        <td><%= employee.position %></td>
+                        <td><%= employee.tasks ? employee.tasks.taskName : 'No Task Assigned' %></td>
+                        <td><%= employee.task ? employee.task.taskStatus : 'No Task Assigned' %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

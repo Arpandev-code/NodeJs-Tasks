@@ -78,8 +78,5 @@ input[type="email"] {
 .btn:hover {
     background-color: #218838;
 }
-input:focus{
-    
-    border:  1px solid #3a7eed;
-}
+
 

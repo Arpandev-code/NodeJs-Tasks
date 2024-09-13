@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Registration</title>
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+<body>
+    <div class="form-conatiner">
+        <h1>Register</h1>
+        <form action="/register" method="POST">
+            <input type="text" name="empName" placeholder="Employee Name" required><br>
+            <input type="email" name="empEmail" placeholder="Employee Email" required><br>
+            <input type="number" name="empPhone" placeholder="Employee Phone" required><br>
+            <input type="text" name="password" placeholder="Employee Password" required><br>
+            <label for="position">Position:</label>
+            <select name="position" id="position" required>
+                <option value="" disabled selected>Select a position</option>
+                <% positions.forEach(function(position) { %>
+                    <option value="<%= position %>"><%= position %></option>
+                <% }); %>
+            </select><br>
+            <input type="number" name="salary" placeholder="Salary" id="" required><br>
+            <button type="submit">Register</button>
+        </form>
+        <a href="/login">Already have an account? Login here.</a>
+    </div>
+    <% 
+    if(typeof error!=='undefined') 
+    { %>
+        <script>
+            alert('<%= error %>');
+        </script>
+    <% } 
+    %>
+</body>
+</html>

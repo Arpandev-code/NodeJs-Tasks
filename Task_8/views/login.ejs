@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Login</title>
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+<body>
+    <div class="form-conatiner">
+        <h1>Login</h1>
+        <form action="/login" method="POST">
+            <input type="email" name="empEmail" placeholder="Employee Email" required><br>
+            <input type="text" name="password" placeholder="Authentication Password" required><br>
+            <button type="submit">Login</button>
+        </form>
+        <a href="/register">Don't have an account? Create one.</a>
+    </div>
+    <% 
+        if(typeof error!=='undefined') 
+        { %>
+            <script>
+                alert('<%= error %>');
+            </script>
+        <% } 
+    %>
+</body>
+</html>
