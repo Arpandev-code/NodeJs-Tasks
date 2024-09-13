@@ -36,13 +36,13 @@ exports.getUsers = async (req, res) => {
 exports.getUserDetails = async (req, res) => {
     const { id } = req.params;
     try {
-        const user = await User.findOne({
+        const user = await User.findByPk(id, ({
             include: [{
                 model: Brand,
                 as: 'brand',
                 attributes: ['title']
             }]
-        });
+        }));
         if (user) {
             const userWithBrand = {
                 id: user.id,
@@ -68,6 +68,10 @@ exports.getUserDetails = async (req, res) => {
 
 exports.createUser = async (req, res) => {
     const { name, email, password, brandId } = req.body;
+    console.log(req.body);
+    console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+    
+    
     try {
         const newUser = await User.create({ name, email, password, brandId });
         res.status(201).json(newUser);
