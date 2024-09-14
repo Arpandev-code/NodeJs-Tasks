@@ -23,7 +23,9 @@ exports.getUsers = async (req, res) => {
                 updatedAt: user.updatedAt,
                 brandName: user.brand ? user.brand.title : null
             }));
-            return res.status(200).send({ data: { success: true, list: formattedUsers }, errorNode: { errorCode: 0, errorMessage: "No Error" } });
+            return res.status(200).send(formattedUsers)
+
+           // return res.status(200).send({ data: { success: true, list: formattedUsers }, errorNode: { errorCode: 0, errorMessage: "No Error" } });
         } else {
             return res.status(200).send({ data: { success: true, list: formattedUsers }, errorNode: { errorCode: 0, errorMessage: "No Error" } });
         }
@@ -56,7 +58,8 @@ exports.getUserDetails = async (req, res) => {
                 updatedAt: user.updatedAt,
                 brandName: user.brand ? user.brand.title : null
             };
-            return res.status(200).send({ data:{success:true,details:userWithBrand},errorNode:{errorCode:0, errorMessage:"No Error"}}); 
+            return res.status(200).send(userWithBrand)
+            // return res.status(200).send({ data:{success:true,details:userWithBrand},errorNode:{errorCode:0, errorMessage:"No Error"}}); 
         } else {
             return res.status(200).send({ data:{success:true,details:{}},errorNode:{errorCode:0, errorMessage:"No Error"}});
         }
